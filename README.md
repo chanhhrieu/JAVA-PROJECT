@@ -1,2 +1,2 @@
 # JAVA-PROJECT
-Some project and lab practice with java
+Some my project and lab practice with java
