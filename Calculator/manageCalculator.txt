@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package J1LP;
+
+/**
+ *
+ * @author admin
+ */
+public class manageCalculator {
+
+    checkValid cv = new checkValid();
+
+    public void displayRectangle() {
+        System.out.println("please input side width of rectangle: ");
+        double width = cv.getValue();
+        System.out.println("Please input length of rectangle: ");
+        double length = cv.getValue();
+        Rectangle r = new Rectangle(width, length);
+        r.printResult();
+    }
+
+    public void displayCircle() {
+        System.out.println("Please input radius of Circle: ");
+        double radius = cv.getValue();
+        Circle c = new Circle(radius);
+        c.printResult();
+    }
+
+    public void displayTriangle() {
+        System.out.println("Please input side A of triangle: ");
+        double sideA = cv.getValue();
+        System.out.println("Please input side B of triangle: ");
+        double sideB = cv.getValue();
+        System.out.println("Please input side C of triangle: ");
+        double sideC = cv.getValue();
+        Triangle t = new Triangle(sideA, sideB, sideC);
+        t.printResult();
+    }
+
+}

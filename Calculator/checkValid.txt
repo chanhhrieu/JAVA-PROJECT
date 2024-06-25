@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package J1LP;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author admin
+ */
+public class checkValid {
+
+    private Scanner sc = new Scanner(System.in);
+
+    public int checkLimit(int min, int max) {
+        while (true) {
+            try {
+                int choice = Integer.parseInt(sc.next());
+                if (choice < min || choice > max) {
+                    throw new NumberFormatException();
+                }
+                return choice;
+
+            } catch (NumberFormatException e) {
+                System.err.println("Not valid. Please import from :[" + min + ", " + max + "]");
+                System.out.print("Enter:");
+            }
+        }
+    }
+
+    public double getValue() {
+        double rs = 0.0;
+        while (true) {
+            try {
+                rs = Double.parseDouble(sc.nextLine());
+                return rs;
+            } catch (Exception e) {
+                System.out.println(" Please enter positive number");
+            }
+        }
+    }
+
+}

@@ -1,0 +1,52 @@
+package J1LP;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Calculator Shape Program");
+        Scanner scanner = new Scanner(System.in);
+        shape[] listShape = new shape[3];
+        checkValid cv = new checkValid();
+        for (int i = 0; i < listShape.length; i++) {
+            System.out.println("Enter shape type (rectangle/circle/triangle):");
+            String shapeType = scanner.nextLine();
+            try {
+                if (shapeType.equalsIgnoreCase("rectangle")) {
+
+                    System.out.println("please input side width of rectangle: ");
+                    double width = cv.getValue();
+                    System.out.println("Please input length of rectangle: ");
+                    double length = cv.getValue();
+                    listShape[i] = new Rectangle(width, length);
+
+                } else if (shapeType.equalsIgnoreCase("circle")) {
+                    System.out.println("Please input radius of Circle: ");
+                    double radius = cv.getValue();
+                    listShape[i] = new Circle(radius);
+
+                } else if (shapeType.equalsIgnoreCase("triangle")) {
+                    System.out.println("Please input side A of triangle: ");
+                    double sideA = cv.getValue();
+                    System.out.println("Please input side B of triangle: ");
+                    double sideB = cv.getValue();
+                    System.out.println("Please input side C of triangle: ");
+                    double sideC = cv.getValue();
+                    listShape[i] = new Triangle(sideA, sideB, sideC);
+
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a numeric value.");
+                scanner.nextLine();
+                i--;
+            }
+        }
+        for (shape i : listShape) {
+            i.printResult();
+        }
+
+    }
+
+}
